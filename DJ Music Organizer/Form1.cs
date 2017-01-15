@@ -25,13 +25,15 @@ namespace DJ_Music_Organizer
         {
             selectFolderAndGetAllSongs();
             toolStripStatusLabel1.Text = String.Format("Selected {0} songs", this.songs.Length);
+            btn_Process.Enabled = true;
         }
 
         private void btn_Process_Click(object sender, EventArgs e)
         {
             btn_Process.Enabled = false;
+            btn_selectMusicDirectory.Enabled = false;
             toolStripStatusLabel1.Text = String.Format("Processing {0} songs", this.songs.Length);
-            songProcessor.RunWorkerAsync();
+            songProcessor.RunWorkerAsync();           
         }
 
         private void selectFolderAndGetAllSongs()
@@ -68,7 +70,8 @@ namespace DJ_Music_Organizer
 
         private void songProcessor_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
-            btn_Process.Enabled = true;           
+            btn_Process.Enabled = true;
+            btn_selectMusicDirectory.Enabled = true;      
             toolStripProgressBar1.Value = 100;
             toolStripStatusLabel1.Text = String.Format("Finished processing {0} songs", this.songs.Length);
             MessageBox.Show("Finished processing!", "Finished Processing", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -114,6 +114,7 @@
             // 
             // btn_Process
             // 
+            this.btn_Process.Enabled = false;
             this.btn_Process.Location = new System.Drawing.Point(6, 58);
             this.btn_Process.Name = "btn_Process";
             this.btn_Process.Size = new System.Drawing.Size(411, 30);
