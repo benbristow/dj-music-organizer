@@ -17,6 +17,16 @@ namespace DJ_Music_Organizer
             return string.Join(" , ", fileAsTaggable().Tag.Genres);
         }
 
+        public void setGenre()
+        {
+            TagLib.File taggableFile = fileAsTaggable();
+            if (getGenre() != getDirectoryName())
+            {
+                taggableFile.Tag.Genres = new string[] { getDirectoryName() };
+                taggableFile.Save();
+            }
+        }
+
         public string getFilePath()
         {
             return file.FullName;
@@ -25,13 +35,6 @@ namespace DJ_Music_Organizer
         public string getDirectoryName()
         {
             return file.Directory.Name;
-        }
-
-        public void setGenre()
-        {
-            TagLib.File taggableFile = fileAsTaggable();
-            taggableFile.Tag.Genres = new string[] { getDirectoryName() };
-            taggableFile.Save();
         }
 
         private TagLib.File fileAsTaggable()
