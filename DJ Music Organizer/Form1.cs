@@ -64,7 +64,7 @@ namespace DJ_Music_Organizer
             {
                 Song song = this.songs[i];
                 song.setGenre();
-                songProcessor.ReportProgress((int)100.0 * i / this.songs.Length);
+                songProcessor.ReportProgress((int)100.0 * (i + 1) / this.songs.Length);
             }
         }
 
