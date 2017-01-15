@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DJ Music Organizer")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Set genre IDtags of MP3's to match the file's parent directory name.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Ben Bristow")]
 [assembly: AssemblyProduct("DJ Music Organizer")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright Ben Bristow ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
